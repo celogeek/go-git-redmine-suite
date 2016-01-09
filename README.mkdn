@@ -1,1 +1,6 @@
 Git Redmine Suite - Go
+
+Installation:
+  
+  GOPATH=WHERE_TO_INSTALL
+  make install
