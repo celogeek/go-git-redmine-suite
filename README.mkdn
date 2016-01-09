@@ -1,6 +1,9 @@
-Git Redmine Suite - Go
+Git Redmine Suite by Celogeek
+Writing in Go
 
 Installation:
   
-  GOPATH=WHERE_TO_INSTALL
-  make install
+```
+GOPATH=WHERE_TO_INSTALL
+make install
+```
