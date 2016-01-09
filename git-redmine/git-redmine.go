@@ -20,8 +20,6 @@ func main() {
 		params = os.Args[2:len(os.Args)]
 	}
 
-	fmt.Println("Command:", command)
-
 	switch command {
 	case "task":
 		task(params)
