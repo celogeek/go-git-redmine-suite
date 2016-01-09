@@ -1,15 +1,41 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
+	"os"
 )
 
 const VERSION = 0.01
 const AUTHOR = "Celogeek"
 
 func main() {
-    fmt.Printf("Git Redmine Suite v%v by %v\n", VERSION, AUTHOR)
-    fmt.Println("")
-    fmt.Println("[task]")
-    fmt.Println("  * git task info [TASK_ID]: get task information")
+	if len(os.Args) < 2 {
+		help()
+		return
+	}
+
+	command := os.Args[1]
+	var params []string
+	if len(os.Args) > 2 {
+		params = os.Args[2:len(os.Args)]
+	}
+
+	fmt.Println("Command:", command)
+
+	switch command {
+	case "task":
+		task(params)
+	default:
+		help()
+	}
+}
+
+func info() {
+	fmt.Printf("Git Redmine Suite v%v by %v\n", VERSION, AUTHOR)
+	fmt.Println("")
+}
+
+func help() {
+	info()
+	task_help()
 }
